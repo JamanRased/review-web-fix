@@ -7,6 +7,9 @@ import Contact from './components/Home/Contact/Contact';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import About from './components/Home/About/About';
 import Menubar from './components/Shared/Menubar/Menubar';
+import Review from './components/Home/Review/Review';
+import Footer from './components/Shared/Footer/Footer';
+import Booking from './components/Booking/Booking';
 
 function App() {
   return (
@@ -20,8 +23,14 @@ function App() {
           <Route path="/course">
             <Course></Course>
           </Route>
-          <Route path="/contact">
+          <Route path="/allcourse">
+            <Course></Course>
+          </Route>
+          <Route path="/contactus">
             <Contact></Contact>
+          </Route>
+          <Route path="/review">
+            <Review></Review>
           </Route>
           <Route path="/about">
             <About></About>
@@ -29,10 +38,14 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route path="/booking/:courseId">
+            <Booking></Booking>
+          </Route>
           <Route exact path="*">
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </BrowserRouter>
     </div>
   );
